@@ -1,0 +1,72 @@
+# CodeRabbit Central Configuration for Kanopy-Labs Organization
+# This is the organization-wide default configuration
+# Repository-specific .coderabbit.yaml files will override these settings
+
+# Enable automatic reviews
+enable_auto_review: true
+
+review:
+  # Automatically review pull requests when opened
+  auto_review: true
+  
+  # Automatically review incremental changes when new commits are pushed
+  auto_review_incremental: true
+  
+  # Review draft pull requests (set to false to skip drafts)
+  review_draft_prs: false
+  
+  # Review length: concise, medium, or detailed
+  review_length: medium
+  
+  # Review strictness: relaxed, balanced, or strict
+  review_strictness: balanced
+  
+  # Base branches to review (empty array means all branches)
+  base_branches: []
+  
+  # Ignore pull requests with these keywords in the title
+  ignore_title_keywords: []
+  
+  # Only review pull requests with these labels (empty array means all)
+  labels: []
+
+paths:
+  include: []
+  exclude:
+    - "**/*.lock"
+    - "**/node_modules/**"
+    - "**/.next/**"
+    - "**/dist/**"
+    - "**/build/**"
+    - "**/*.min.js"
+    - "**/*.min.css"
+
+language:
+  typescript:
+    review_comment_language: "en"
+  javascript:
+    review_comment_language: "en"
+  typescriptreact:
+    review_comment_language: "en"
+  javascriptreact:
+    review_comment_language: "en"
+  python:
+    review_comment_language: "en"
+  java:
+    review_comment_language: "en"
+  go:
+    review_comment_language: "en"
+  rust:
+    review_comment_language: "en"
+
+analysis:
+  security: true
+  performance: true
+  best_practices: true
+
+chat:
+  enabled: true
+
+summary:
+  enabled: true
+  include_commit_messages: true
