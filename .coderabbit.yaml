@@ -1,9 +1,5 @@
 # yaml-language-server: $schema=https://coderabbit.ai/integrations/schema.v2.json
 
-# CodeRabbit Central Configuration for Kanopy-Labs Organization
-# This is the organization-wide default configuration
-# Repository-specific .coderabbit.yaml files will override these settings
-
 language: "en-US"
 
 reviews:
@@ -26,43 +22,7 @@ reviews:
     - "!**/build/**"
     - "!**/*.min.js"
     - "!**/*.min.css"
-  
-  high_level_summary: true
-  review_status: true
-  commit_status: true
-  changed_files_summary: true
-  sequence_diagrams: true
-  estimate_code_review_effort: true
-  assess_linked_issues: true
-  related_issues: true
-  related_prs: true
-  suggested_labels: true
-  suggested_reviewers: true
-  in_progress_fortune: true
-  poem: true
-  
-  tools:
-    eslint:
-      enabled: true
-    biome:
-      enabled: true
-    gitleaks:
-      enabled: true
-    semgrep:
-      enabled: true
 
 chat:
-  enabled: true
   art: true
   auto_reply: true
-
-knowledge_base:
-  code_guidelines:
-    enabled: true
-  web_search:
-    enabled: true
-
-code_generation:
-  docstrings:
-    language: "en-US"
-  unit_tests: {}
