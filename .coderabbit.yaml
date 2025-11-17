@@ -1,72 +1,68 @@
+# yaml-language-server: $schema=https://coderabbit.ai/integrations/schema.v2.json
+
 # CodeRabbit Central Configuration for Kanopy-Labs Organization
 # This is the organization-wide default configuration
 # Repository-specific .coderabbit.yaml files will override these settings
 
-# Enable automatic reviews
-enable_auto_review: true
+language: "en-US"
 
-review:
-  # Automatically review pull requests when opened
-  auto_review: true
+reviews:
+  profile: assertive
   
-  # Automatically review incremental changes when new commits are pushed
-  auto_review_incremental: true
+  auto_review:
+    enabled: true
+    auto_incremental_review: true
+    drafts: false
+    ignore_title_keywords: []
+    labels: []
+    base_branches: []
+    ignore_usernames: []
   
-  # Review draft pull requests (set to false to skip drafts)
-  review_draft_prs: false
+  path_filters:
+    - "!**/*.lock"
+    - "!**/node_modules/**"
+    - "!**/.next/**"
+    - "!**/dist/**"
+    - "!**/build/**"
+    - "!**/*.min.js"
+    - "!**/*.min.css"
   
-  # Review length: concise, medium, or detailed
-  review_length: medium
+  high_level_summary: true
+  review_status: true
+  commit_status: true
+  changed_files_summary: true
+  sequence_diagrams: true
+  estimate_code_review_effort: true
+  assess_linked_issues: true
+  related_issues: true
+  related_prs: true
+  suggested_labels: true
+  suggested_reviewers: true
+  in_progress_fortune: true
+  poem: true
   
-  # Review strictness: relaxed, balanced, or strict
-  review_strictness: balanced
-  
-  # Base branches to review (empty array means all branches)
-  base_branches: []
-  
-  # Ignore pull requests with these keywords in the title
-  ignore_title_keywords: []
-  
-  # Only review pull requests with these labels (empty array means all)
-  labels: []
-
-paths:
-  include: []
-  exclude:
-    - "**/*.lock"
-    - "**/node_modules/**"
-    - "**/.next/**"
-    - "**/dist/**"
-    - "**/build/**"
-    - "**/*.min.js"
-    - "**/*.min.css"
-
-language:
-  typescript:
-    review_comment_language: "en"
-  javascript:
-    review_comment_language: "en"
-  typescriptreact:
-    review_comment_language: "en"
-  javascriptreact:
-    review_comment_language: "en"
-  python:
-    review_comment_language: "en"
-  java:
-    review_comment_language: "en"
-  go:
-    review_comment_language: "en"
-  rust:
-    review_comment_language: "en"
-
-analysis:
-  security: true
-  performance: true
-  best_practices: true
+  tools:
+    eslint:
+      enabled: true
+    biome:
+      enabled: true
+    gitleaks:
+      enabled: true
+    semgrep:
+      enabled: true
 
 chat:
   enabled: true
+  art: true
+  auto_reply: true
 
-summary:
-  enabled: true
-  include_commit_messages: true
+knowledge_base:
+  code_guidelines:
+    enabled: true
+  web_search:
+    enabled: true
+
+code_generation:
+  docstrings:
+    language: "en-US"
+  unit_tests: {}
